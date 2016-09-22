@@ -1,0 +1,153 @@
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                         not supported by any browser */
+}
+
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.continer-list-map {
+  background: blueviolet;
+}
+
+.menu-back {
+  background: darkgray;
+}
+
+md-grid-list md-grid-tile figure {
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 736px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .tablet {
+    display: none;
+  }
+  .map-height {
+    height: 250px;
+  }
+  .list-height{
+    overflow:auto;
+    height:380px;
+  }
+}
+
+@media only screen and (min-width: 736px) and (max-width: 1366px) {
+  .tablet {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: none;
+  }
+  .map-height {
+    height: 350px;
+  }
+  .list-height{
+    overflow:auto;
+    height:300px;
+  }
+
+}
+
+@media only screen and (min-width: 1367px) {
+  .desktop {
+    display: block;
+  }
+
+  .tablet {
+    display: none;
+  }
+
+  .mobile {
+    display: none;
+  }
+  .map-height {
+    height: 550px;
+  }
+  .list-height{
+    overflow:auto;
+    height:360px;
+  }
+}
+
+p, a, h3 {
+  margin-left: 5px;
+}
+
+.img-icon {
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.container {
+  margin: 30px auto;
+  width: 1000px;
+  background-color: #00AA00;
+}
+
+.list-item {
+  padding-left: 40px;
+}
+
+.ng-map-info-window {
+  background-color: lightgreen;
+}
+
+.md-input {
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+.list-items {
+  background-color: #c4e3f3;
+}
+
+.light-green {
+  background-color: aqua;
+}
+
+.blue-green {
+  background-color: cadetblue;
+}
+
+.header {
+  z-index: 61;
+  background-color: blueviolet;
+}
+
+md-input-container {
+  color: #ffffff;
+}
+
+.angular-google-map-container {
+  height: 600px;
+}
+

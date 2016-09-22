@@ -1,0 +1,71 @@
+<!-- header of app -->
+<md-toolbar style="height:50px;">
+    <div class="md-toolbar-tools">
+        <md-button style="padding-top:15px;">
+            <md-tooltip>List</md-tooltip>
+            <img src="../assets/images/logo-1.png" width="45px" height="45px"/>
+        </md-button>
+        <h1 flex style="padding-top:0px;">
+            <span show-md show-gt-md hide-sm>Who What Where</span>
+            <span hide-gt-sm show-sm>W3App</span>
+        </h1>
+        <form>
+        <div layout="row">
+        <md-input-container md-no-float class="md-accent" style="padding-bottom:0px;padding-top:5px;margin-left:25px"
+                            show-gt-md hide-sm hide-md>
+            <input ng-model="cityName" placeholder="Search city here"
+                   style="color:wheat;padding-left:25px;margin-left:5px">
+        </md-input-container>
+        <md-input-container md-no-float class="md-accent" style="padding-bottom:0px;padding-top:5px;margin-left:25px"
+                            show-gt-md hide-sm hide-md>
+            <input ng-model="type" placeholder="Search term here" style="color:wheat;padding-left:25px;margin-left:5px">
+        </md-input-container>
+        <md-button style="background-color:grey;border-radius:20px;margin-top:5px;" show-gt-md hide-sm hide-md
+                   ng-click="submit()">Submit
+        </md-button>
+        <md-button show-sm show-md hide-gt-md style="padding-top:15px;" ng-click="showDefaultAndMobile()">
+            <md-tooltip> Search</md-tooltip>
+            <ng-md-icon icon="search" style="fill:#ffffff;" size="45"></ng-md-icon>
+        </md-button>
+         </div>
+        </form>
+    </div>
+</md-toolbar>
+
+<!--Map and content display in map-->
+<div layout="column" style="overflow:hidden;">
+    <div flex>
+        <md-content class="blue-green" style="overflow: auto;">
+            <md-content map-lazy-load="https://maps.google.com/maps/api/js">
+                <ng-map flex class="map-height" center="{{allInfo[0].lat}}, {{allInfo[0].lon}}" zoom="{{zoom}}">
+                    <info-window id="{{'myInfoWindow'}}">
+                        <div>
+                            <pre> {{name}} </pre>
+                            <pre> {{address}} </pre>
+                            <pre> {{rating}} </pre>
+                        </div>
+                    </info-window>
+                    <marker ng-repeat="marker in allInfo" position="[{{marker.lat}},{{marker.lon}}]"
+                            title="{{marker.name}}" on-mouseover="showCity(event,$index)" on-mouseout="removeMarker()">
+                    </marker>
+                </ng-map>
+            </md-content>
+        </md-content>
+    </div>
+  <!-- list of all items -->
+    <md-subheader style="height: 2px;"></md-subheader>
+    <div flex class="list-height">
+    <md-grid-list md-cols-gt-lg="3" md-cols-lg="2" md-cols-md="1" md-cols-sm="1" md-gutter="5px" md-row-height-md="4:1"
+                  md-row-height-sm="4:1.5" md-row-height-gt-md="4:1.5" >
+        <md-grid-tile ng-repeat="data in allInfo" class="menu-back">
+            <img ng-src="{{data.image_url}}" alt="{{data.name}}" style="border-radius: 50px"/>
+            <div class="md-list-item-text compact">
+                <h3 ng-click="showCustom($index)" style="cursor: pointer;">{{data.name}}</h3>
+                <p>{{data.address}}</p>
+                <p>{{data.display_phone}}</p>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
+    </div>
+
+</div>

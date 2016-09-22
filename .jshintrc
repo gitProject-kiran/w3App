@@ -1,0 +1,29 @@
+{
+  "bitwise": true,
+  "camelcase": false,
+  "curly": false,
+  "eqeqeq": false,
+  "eqnull": true,
+  "forin": true,
+  "freeze": false,
+  "immed": true,
+  "indent": 4,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  "plusplus": false,
+  "quotmark": true,
+  "undef": false,
+  "unused": true,
+  "strict": false,
+  "maxparams": 20,
+  "maxdepth": 4,
+  "maxlen": 120,
+  "loopfunc": true,
+  "globals": {
+
+  }
+}
