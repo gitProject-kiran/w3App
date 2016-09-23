@@ -57,7 +57,7 @@
     <div flex class="list-height">
     <md-grid-list md-cols-gt-lg="3" md-cols-lg="2" md-cols-md="1" md-cols-sm="1" md-gutter="5px" md-row-height-md="4:1"
                   md-row-height-sm="4:1.5" md-row-height-gt-md="4:1.5" >
-        <md-grid-tile ng-repeat="data in allInfo" class="menu-back">
+        <md-grid-tile ng-repeat="data in allInfo">
             <img ng-src="{{data.image_url}}" alt="{{data.name}}" style="border-radius: 50px"/>
             <div class="md-list-item-text compact">
                 <h3 ng-click="showCustom($index)" style="cursor: pointer;">{{data.name}}</h3>
